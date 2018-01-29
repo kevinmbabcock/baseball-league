@@ -30,6 +30,7 @@ export class PlayerService {
   }
 
   deletePlayer(localPlayerToDelete) {
-    localPlayerToDelete.remove();
+    const playerEntryInFirebase = this.getPlayerById(localPlayerToDelete.$key);
+    playerEntryInFirebase.remove();
   }
 }
