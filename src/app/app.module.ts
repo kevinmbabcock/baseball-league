@@ -21,6 +21,7 @@ import { AddPlayerComponent } from './add-player/add-player.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { AddGameComponent } from './add-game/add-game.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
+import { PlayerDetailsComponent } from './player-details/player-details.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -43,7 +44,8 @@ export const firebaseConfig = {
     AddPlayerComponent,
     EditPlayerComponent,
     AddGameComponent,
-    EditGameComponent
+    EditGameComponent,
+    PlayerDetailsComponent
   ],
   imports: [
     BrowserModule,
