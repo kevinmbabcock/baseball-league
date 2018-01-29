@@ -1,21 +1,26 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" routerLink="welcome">About</a>
-    </div>
-    <div class="navbar-header">
-      <a class="navbar-brand" routerLink="teams">Teams</a>
-    </div>
-    <div class="navbar-header">
-      <a class="navbar-brand" routerLink="players">Players</a>
-    </div>
-    <div class="navbar-header">
-      <a class="navbar-brand" routerLink="schedule">Schedule</a>
-    </div>
-  </div>
-</nav>
-
 <div class="container">
+
   <h1 class="jumbotron">{{title}}</h1>
-  <router-outlet></router-outlet>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="">About</a>
+      </div>
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="teams">Teams</a>
+      </div>
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="players">Players</a>
+      </div>
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="schedule">Schedule</a>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
 </div>
