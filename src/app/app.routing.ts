@@ -7,6 +7,12 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { TeamDetailsComponent } from './team-details/team-details.component';
 import { PlayerDetailsComponent } from './player-details/player-details.component';
 import { AdminComponent } from './admin/admin.component';
+import { AddPlayerComponent } from './add-player/add-player.component';
+import { EditPlayerComponent } from './edit-player/edit-player.component';
+import { AddTeamComponent } from './add-team/add-team.component';
+import { EditTeamComponent } from './edit-team/edit-team.component';
+import { AddGameComponent } from './add-game/add-game.component';
+import { EditGameComponent } from './edit-game/edit-game.component';
 
 
 const appRoutes: Routes = [
@@ -37,6 +43,30 @@ const appRoutes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
+  },
+  {
+    path: 'admin/add-player',
+    component: AddPlayerComponent
+  },
+  {
+    path: 'admin/edit-player',
+    component: EditPlayerComponent
+  },
+  {
+    path: 'admin/add-team',
+    component: AddTeamComponent
+  },
+  {
+    path: 'admin/edit-team',
+    component: EditTeamComponent
+  },
+  {
+    path: 'admin/add-game',
+    component: AddGameComponent
+  },
+  {
+    path: 'admin/edit-game',
+    component: EditGameComponent
   }
 ];
 
