@@ -14,4 +14,8 @@ export class PlayerService {
   getPlayerById(playerId: string) {
     return this.database.object('players/' + playerId);
   }
+
+  getPlayers() {
+    return this.players;
+  }
 }
