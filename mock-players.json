@@ -1,0 +1,44 @@
+{ "players": [{
+  "name": "Kevin",
+  "age": "25",
+  "position": "Infield",
+  "team": "Expos",
+  "jerseyNumber":  "10"
+  }, {
+  "name": "Mike",
+  "age": "26",
+  "position": "0utfield",
+  "team": "Brewers",
+  "jerseyNumber":  "3"
+  }, {
+  "name": "Kam",
+  "age": "28",
+  "position": "Pitcher",
+  "team": "Expos",
+  "jerseyNumber":  "12"
+  }, {
+  "name": "Tyler",
+  "age": "30",
+  "position": "Catcher",
+  "team": "Braves",
+  "jerseyNumber":  "16"
+  }, {
+  "name": "Brian",
+  "age": "30",
+  "position": "Pitcher",
+  "team": "Expos",
+  "jerseyNumber":  "5"
+  }
+  ],
+  "games": [{
+  "team1": "Expos",
+  "team2": "Braves",
+  "date": "Today",
+  "field": "Here"
+  }, {
+  "team1": "Expos",
+  "team2": "Brewers",
+  "date": "Tomorrow",
+  "field": "There"
+  }]
+}
