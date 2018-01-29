@@ -13,6 +13,7 @@ import { PlayerService } from '../player.service';
 })
 export class TeamDetailsComponent implements OnInit {
   teamName: string;
+  teamToDisplay;
 
   constructor(private route: ActivatedRoute, private location: Location, private playerService: PlayerService) { }
 
