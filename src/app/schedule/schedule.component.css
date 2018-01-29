@@ -1,0 +1,13 @@
+.schedule {
+  padding: 10px;
+}
+
+.col-md-3 {
+  text-align: center;
+  border-style: solid;
+  border-width: 2px 1px 2px 2px;
+}
+
+.title {
+  background-color: #cccccc;
+}
