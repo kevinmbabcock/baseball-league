@@ -16,7 +16,6 @@ export class TeamListComponent implements OnInit {
   constructor(private router: Router, private playerService: PlayerService) { }
 
   ngOnInit() {
-    console.log(teams);
   }
 
   goToDetailPage(clickedTeam) {

@@ -20,4 +20,9 @@ export class PlayerService {
   getGames() {
     return this.games;
   }
+
+  getPlayers() {
+    return this.players;
+
+  }
 }
