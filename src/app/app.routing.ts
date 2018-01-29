@@ -23,6 +23,15 @@ const appRoutes: Routes = [
   {
     path: 'schedule',
     component: ScheduleComponent
+  },
+  {
+    path: 'team/:name',
+    component: TeamDetailsComponent
+  },
+  {
+    path: 'player/:id',
+    component: PlayerDetailsComponent
+  }
   }
 ];
 
