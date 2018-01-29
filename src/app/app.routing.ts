@@ -27,11 +27,11 @@ const appRoutes: Routes = [
     component: ScheduleComponent
   },
   {
-    path: 'team/:name',
+    path: 'teams/:name',
     component: TeamDetailsComponent
   },
   {
-    path: 'player/:id',
+    path: 'players/:id',
     component: PlayerDetailsComponent
   }
 ];
