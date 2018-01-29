@@ -9,7 +9,6 @@ import { PlayerDetailsComponent } from './player-details/player-details.componen
 import { AdminComponent } from './admin/admin.component';
 
 
-
 const appRoutes: Routes = [
   {
     path: '',
