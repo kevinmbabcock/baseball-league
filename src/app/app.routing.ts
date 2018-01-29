@@ -32,7 +32,6 @@ const appRoutes: Routes = [
     path: 'player/:id',
     component: PlayerDetailsComponent
   }
-  }
 ];
 
 
