@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayerService } from '../player.service';
+import { GameService } from '../game.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.css'],
-  providers: [PlayerService]
+  providers: [GameService]
 })
 export class ScheduleComponent implements OnInit {
   games: FirebaseListObservable<any[]>;
 
-  constructor(private playerService: PlayerService) { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
-    this.games = this.playerService.getGames();
+    this.games = this.gameService.getGames();
   }
 
 }
