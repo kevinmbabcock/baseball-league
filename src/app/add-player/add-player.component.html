@@ -1,3 +1,40 @@
-<p>
-  add-player works!
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add new player to the league</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <div>
+        <label>Player Name:</label>
+        <br>
+        <input #newName>
+      </div>
+
+      <div>
+        <label>Player age:</label>
+        <br>
+        <input #newAge>
+      </div>
+
+      <div>
+        <label>Position</label>
+        <br>
+        <textarea #newPosition></textarea>
+      </div>
+
+      <div>
+        <label>Team</label>
+        <br>
+        <textarea #newTeam></textarea>
+      </div>
+
+      <div>
+        <label>Jersey Number</label>
+        <br>
+        <textarea #newJerseyNumber></textarea>
+      </div>
+
+      <button (click)="submitForm(newName.value, newAge.value, newPosition.value, newTeam.value, newJerseyNumber.value); newName.value=''; newAge.value=''; newPosition.value=''; newTeam.value=''; newJerseyNumber.value=''" routerLink='admin/add-player'>Add</button>
+    </div>
+  </div>
+</div>

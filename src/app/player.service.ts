@@ -23,6 +23,9 @@ export class PlayerService {
 
   getPlayers() {
     return this.players;
+  }
 
+  addPlayer(newPlayer: Player) {
+    this.players.push(newPlayer);
   }
 }
