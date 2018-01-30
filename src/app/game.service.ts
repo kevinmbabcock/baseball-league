@@ -25,8 +25,8 @@ export class GameService {
 
   updateGame(localUpdatedGame){
     const gameEntryInFirebase = this.getGameById(localUpdatedGame.$key);
-    gameEntryInFirebase.update({team1: localUpdatedGame.team1,
-    team2: localUpdatedGame.team2, date: localUpdatedGame.date, field: localUpdatedGame.field});
+    gameEntryInFirebase.update({team1: localUpdatedGame.team1, team1Score: localUpdatedGame.team1Score,
+    team2: localUpdatedGame.team2, team2Score: localUpdatedGame.team2Score, date: localUpdatedGame.date, field: localUpdatedGame.field});
   }
 
   deleteGame(localGameToDelete){

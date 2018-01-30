@@ -1,4 +1,4 @@
-.col-md-3 {
+.col-md-1, .col-md-2, .col-md-3 {
   text-align: center;
   border-style: solid;
   border-width: 0px 0px 1px 1px;

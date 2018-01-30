@@ -15,8 +15,8 @@ export class AddGameComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitForm(team1: string, team2: string, date: string, field: string) {
-    const newGame: Game = new Game(team1, team2, date, field);
+  submitForm(team1: string, team1Score: string, team2: string, team2Score: string, date: string, field: string) {
+    const newGame: Game = new Game(team1, team1Score, team2, team2Score, date, field);
     this.gameService.addGame(newGame);
   }
 
