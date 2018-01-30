@@ -12,9 +12,19 @@
 
 input {
   width: inherit;
+  border: none;
 }
 
 button {
   width: 50px;
   font-size: 10px;
+}
+
+.row {
+  background-color: white;
+}
+
+h3 {
+  background-color: white;
+  padding: 15px;
 }

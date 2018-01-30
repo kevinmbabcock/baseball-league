@@ -1,4 +1,12 @@
-<h3>Details for <em>{{(teamToDisplay | async)?.name}}</em></h3>
+<div class="team-details">
+  <h1>Details for <em>{{(teamToDisplay | async)?.name}}</em></h1>
+  <br>
+  <br>
+  <h3>Manager: {{(teamToDisplay | async)?.manager}}</h3>
+  <br>
+  <app-roster></app-roster>
+  <br>
+  <br>
 
-<app-roster></app-roster>
-<app-schedule></app-schedule>
+  <app-schedule></app-schedule>
+</div>

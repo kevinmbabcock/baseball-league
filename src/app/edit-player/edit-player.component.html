@@ -1,5 +1,5 @@
 <div class="edit-player">
-  <h4>Edit Player: {{(playerToDisplay | async)?.name}}</h4>
+  <h4>Edit Player: {{playerToDisplay.name}}</h4>
 
   <label>New Name:</label>
   <input [(ngModel)]="playerToDisplay.name">
@@ -20,10 +20,8 @@
   <label>New Jersey Number:</label>
   <input [(ngModel)]="playerToDisplay.jerseyNumber">
   <br>
-
+  <br>
   <button (click)="beginUpdatingPlayer(playerToDisplay)">Update</button>
-  <br>
-  <br>
   <button (click) ="beginDeletingPlayer(playerToDisplay)" class="btn-danger" routerLink='/edit-player'>Delete Player</button>
 
 </div>
