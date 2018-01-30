@@ -22,4 +22,14 @@ export class TeamService {
   addTeam(newTeam: Team) {
     this.teams.push(newTeam);
   }
+
+  updateTeam(localUpdatedTeam) {
+    const teamEntryInFirebase = this.getTeamById(localUpdatedTeam.$key);
+    teamEntryInFirebase.update({name: localUpdatedTeam.name, age: parseInt(localUpdatedTeam.age, 10), position: localUpdatedTeam.position, team: localUpdatedTeam.team, jerseyNumber: parseInt(localUpdatedTeam.jerseyNumber, 10)});
+  }
+
+  deleteTeam(localTeamToDelete) {
+    const teamEntryInFirebase = this.getTeamById(localTeamToDelete.$key);
+    teamEntryInFirebase.remove();
+  }
 }
