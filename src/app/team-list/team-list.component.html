@@ -4,7 +4,7 @@
     <div *ngFor="let team of teams | async" class="panel panel-default">
       <div class="panel-body">
         <ul>
-          <li (click)="goToDetailPage(team)"><strong>{{team.name}}</strong></li>
+          <li><strong (click)="goToDetailPage(team)">{{team.name}}</strong><br>Manager: {{team.manager}}</li>
         </ul>
       </div>
     </div>
