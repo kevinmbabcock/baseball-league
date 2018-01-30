@@ -24,4 +24,13 @@ export class PlayerService {
     this.players.push(newPlayer);
   }
 
+  updatePlayer(localUpdatedPlayer) {
+    const playerEntryInFirebase = this.getPlayerById(localUpdatedPlayer.$key);
+    playerEntryInFirebase.update({name: localUpdatedPlayer.name, age: parseInt(localUpdatedPlayer.age, 10), position: localUpdatedPlayer.position, team: localUpdatedPlayer.team, jerseyNumber: parseInt(localUpdatedPlayer.jerseyNumber, 10)});
+  }
+
+  deletePlayer(localPlayerToDelete) {
+    const playerEntryInFirebase = this.getPlayerById(localPlayerToDelete.$key);
+    playerEntryInFirebase.remove();
+  }
 }

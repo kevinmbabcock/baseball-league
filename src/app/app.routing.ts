@@ -50,6 +50,10 @@ const appRoutes: Routes = [
   },
   {
     path: 'admin/edit-player',
+    component: RosterComponent
+  },
+  {
+    path: 'admin/edit-player/:id',
     component: EditPlayerComponent
   },
   {
