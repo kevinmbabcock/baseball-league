@@ -1,3 +1,11 @@
 .jumbotron {
   text-align: center;
 }
+
+.navbar-default {
+  background-color: #c299ff;
+}
+
+.navbar-default a {
+  color: white;
+}

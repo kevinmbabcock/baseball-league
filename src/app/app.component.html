@@ -21,6 +21,29 @@
       </div>
     </div>
   </nav>
+  <br>
+// add ngIf to display that part only fot admin url
+  <div class="sidebar">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-left">Players:
+        <li><a routerLink="/admin/add-player">Add player</a></li>
+        <li><a routerLink="/admin/edit-player">Edit player</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-left">Teams:
+        <li><a routerLink="/admin/add-team">Add team</a></li>
+        <li><a routerLink="/admin/edit-team">Edit team</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-left">Games:
+        <li><a routerLink="/admin/add-game">Add game</a></li>
+        <li><a routerLink="/admin/edit-game">Edit Schedule</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <br>
+  <br>
 
   <div>
     <router-outlet></router-outlet>
