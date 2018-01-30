@@ -3,7 +3,7 @@
   <div *ngFor="let team of teams" class="panel panel-default">
     <div class="panel-body">
       <ul>
-        <li (click)="goToDetailPage(team)"><strong>{{team}}</strong></li>
+        <li (click)="goToDetailPage(team)"><strong>{{team.name}}</strong></li>
       </ul>
     </div>
   </div>
