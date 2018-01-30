@@ -4,10 +4,11 @@
     <div *ngFor="let player of players | async" class="panel panel-default">
       <div class="panel-body">
         <ul>
-          <li (click)="goToDetailPage(player)"><strong>{{player.name}}</strong>, <em>{{player.team}}</em></li>
-          <div *ngIf="currentRoute === '/admin/edit-player'">
-            <button routerLink='../../admin/edit-player/{{player.$key}}'>Edit/Delete</button>
+          <li (click)="goToDetailPage(player)"><strong>{{player.name}}</strong>, <em>{{player.team}}</em>
+          <div *ngIf="currentRoute === '/admin/(content:edit-player)'">
+            <button routerLink='/admin/(content:edit-player/{{player.$key}})'>Edit/Delete</button>
           </div>
+          </li>
         </ul>
       </div>
     </div>
