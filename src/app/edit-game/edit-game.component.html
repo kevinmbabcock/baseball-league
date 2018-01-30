@@ -5,39 +5,45 @@
     <div class="col-md-2">
       <h4>Home</h4>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-1">
       <h4></h4>
     </div>
     <div class="col-md-2">
       <h4>Away</h4>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-1">
       <h4></h4>
     </div>
     <div class="col-md-2">
       <h4>Time</h4>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
       <h4>Field</h4>
     </div>
-    <div class="col-md-3">
-      <h4>Update/Delete</h4>
+    <div class="col-md-2">
+      <h4></h4>
     </div>
   </div>
   <div class="row" *ngFor="let game of games | async ">
     <div class="col-md-2">
       <input [(ngModel)]="game.team1">
     </div>
+    <div class="col-md-1">
+      <input [(ngModel)]="game.team1Score">
+    </div>
     <div class="col-md-2">
       <input [(ngModel)]="game.team2">
+    </div>
+    <div class="col-md-1">
+      <input [(ngModel)]="game.team2Score">
     </div>
     <div class="col-md-2">
       <input [(ngModel)]="game.date">
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
       <input [(ngModel)]="game.field">
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
       <button (click)="beginUpdatingGame(game)">Update</button>
       <button (click) ="beginDeletingGame(game)">Delete</button>
     </div>
