@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PlayerService } from '../player.service';
+import { TeamService } from '../team.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { Player } from '../player.model';
 import { Team } from '../team.model';
@@ -9,15 +9,17 @@ import { Team } from '../team.model';
   selector: 'app-team-list',
   templateUrl: './team-list.component.html',
   styleUrls: ['./team-list.component.css'],
-  providers: [PlayerService]
+  providers: [TeamService]
 })
 export class TeamListComponent implements OnInit {
   teams: FirebaseListObservable<any[]>;
   currentRoute = this.router.url;
 
-  constructor(private router: Router, private playerService: PlayerService) { }
+  constructor(private router: Router, private teamService: TeamService) { }
 
   ngOnInit() {
+    this.teams = this.teamService.getTeams();
+    console.log(this.teams);
   }
 
   goToDetailPage(clickedTeam) {
