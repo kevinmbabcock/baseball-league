@@ -22,6 +22,7 @@ import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { AddGameComponent } from './add-game/add-game.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
 import { PlayerDetailsComponent } from './player-details/player-details.component';
+import { TeamMembersPipe } from './team-members.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -45,7 +46,8 @@ export const firebaseConfig = {
     EditPlayerComponent,
     AddGameComponent,
     EditGameComponent,
-    PlayerDetailsComponent
+    PlayerDetailsComponent,
+    TeamMembersPipe
   ],
   imports: [
     BrowserModule,
