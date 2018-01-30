@@ -25,7 +25,7 @@ export class TeamService {
 
   updateTeam(localUpdatedTeam) {
     const teamEntryInFirebase = this.getTeamById(localUpdatedTeam.$key);
-    teamEntryInFirebase.update({name: localUpdatedTeam.name, age: parseInt(localUpdatedTeam.age, 10), position: localUpdatedTeam.position, team: localUpdatedTeam.team, jerseyNumber: parseInt(localUpdatedTeam.jerseyNumber, 10)});
+    teamEntryInFirebase.update({name: localUpdatedTeam.name, manager: localUpdatedTeam.manager});
   }
 
   deleteTeam(localTeamToDelete) {

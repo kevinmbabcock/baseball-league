@@ -1,11 +1,14 @@
 <div class="transparent">
   <h3>Here is a list of all teams in our league</h3>
-    <br>
-    <div *ngFor="let team of teams | async" class="panel panel-default">
-      <div class="panel-body">
-        <ul>
-          <li><strong (click)="goToDetailPage(team)">{{team.name}}</strong><br>Manager: {{team.manager}}</li>
-        </ul>
-      </div>
+  <br>
+  <div *ngFor="let team of teams | async" class="panel panel-default">
+    <div class="panel-body">
+      <ul>
+        <li><strong (click)="goToDetailPage(team)">{{team.name}}</strong><br>Manager: {{team.manager}}</li>
+        <div *ngIf="currentRoute === '/admin/edit-team'">
+          <button routerLink="/admin/edit-team/{{team.$key}}"> Edit/Delete</button>
+        </div>
+      </ul>
     </div>
+  </div>
 </div>

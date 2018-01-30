@@ -1,18 +1,18 @@
 <div class="edit-team">
-  <h4>Edit Team: {{(teamToDisplay | async)?.name}}</h4>
+  <h4>Edit Team: {{teamToDisplay.name}}</h4>
 
   <label>New Team Name:</label>
   <input [(ngModel)]="teamToDisplay.name">
   <br>
 
   <label>New Team Manager:</label>
-  <input [(ngModel)]="teamToDisplay.age">
+  <input [(ngModel)]="teamToDisplay.manager">
   <br>
 
-  <button (click)="beginUpdatingTeam(teamToDisplay)">Update</button>
+  <button (click)="beginUpdatingTeam(teamToDisplay)" class="btn-success" routerLink='../..'>Update</button>
   <br>
   <br>
 
-  <button (click) ="beginDeletingTeam(teamToDisplay)" class="btn-danger" routerLink='/edit-team'>Delete Team</button>
+  <button (click)="beginDeletingTeam(teamToDisplay)" class="btn-danger" routerLink='../..'>Delete Team</button>
 
 </div>

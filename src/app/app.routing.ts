@@ -62,6 +62,10 @@ const appRoutes: Routes = [
   },
   {
     path: 'admin/edit-team',
+    component: TeamListComponent
+  },
+  {
+    path: 'admin/edit-team/:id',
     component: EditTeamComponent
   },
   {
