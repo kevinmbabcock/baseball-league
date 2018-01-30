@@ -1,15 +1,15 @@
 <div class="transparent">
   <h3>Players:</h3>
-    <br>
-    <div *ngFor="let player of players | async" class="panel panel-default">
-      <div class="panel-body">
-        <ul>
-          <li><strong (click)="goToDetailPage(player)">{{player.name}}</strong>, <em>{{player.team}}</em>
+  <br>
+  <div *ngFor="let player of players | async" class="panel panel-default">
+    <div class="panel-body">
+      <ul>
+        <li><strong (click)="goToDetailPage(player)">{{player.name}}</strong>, <em>{{player.team}}</em>
           <div *ngIf="currentRoute === '/admin/(content:edit-player)'">
-            <button routerLink='/admin/(content:edit-player/{{player.$key}})'>Edit/Delete</button>
+            <button routerLink='admin/(content:edit-player/{{player.$key}})'>Edit/Delete</button>
           </div>
-          </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
     </div>
+  </div>
 </div>
