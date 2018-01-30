@@ -33,7 +33,7 @@ const appRoutes: Routes = [
     component: ScheduleComponent
   },
   {
-    path: 'teams/:name',
+    path: 'teams/:id',
     component: TeamDetailsComponent
   },
   {

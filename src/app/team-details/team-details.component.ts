@@ -23,9 +23,6 @@ export class TeamDetailsComponent implements OnInit {
     });
     this.teamToDisplay = this.teamService.getTeamById(this.teamId);
     console.log(this.teamToDisplay);
-    // this.teamService.getTeamById(this.teamId).subscribe(dataLastEmittedFromObserver => {
-    //   this.teamToDisplay = dataLastEmittedFromObserver;
-    // });
   }
 
 }

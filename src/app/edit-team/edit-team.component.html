@@ -1,3 +1,18 @@
-<p>
-  edit-team works!
-</p>
+<div class="edit-team">
+  <h4>Edit Team: {{(teamToDisplay | async)?.name}}</h4>
+
+  <label>New Team Name:</label>
+  <input [(ngModel)]="teamToDisplay.name">
+  <br>
+
+  <label>New Team Manager:</label>
+  <input [(ngModel)]="teamToDisplay.age">
+  <br>
+
+  <button (click)="beginUpdatingTeam(teamToDisplay)">Update</button>
+  <br>
+  <br>
+
+  <button (click) ="beginDeletingTeam(teamToDisplay)" class="btn-danger" routerLink='/edit-team'>Delete Team</button>
+
+</div>
