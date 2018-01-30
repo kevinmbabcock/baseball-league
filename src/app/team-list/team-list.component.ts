@@ -19,7 +19,6 @@ export class TeamListComponent implements OnInit {
 
   ngOnInit() {
     this.teams = this.teamService.getTeams();
-    console.log(this.teams);
   }
 
   goToDetailPage(clickedTeam) {

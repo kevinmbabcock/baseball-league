@@ -6,8 +6,9 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class TeamService {
   teams: FirebaseListObservable<any[]>;
 
+
   constructor(private database: AngularFireDatabase) {
-    this.teams = database.list('teams');
+     this.teams = database.list('teams');
   }
 
   getTeamById(teamId: string) {
@@ -18,4 +19,7 @@ export class TeamService {
     return this.teams;
   }
 
+  addTeam(newTeam: Team) {
+    this.teams.push(newTeam);
+  }
 }
