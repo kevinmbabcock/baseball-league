@@ -1,44 +1,65 @@
 { "players": [{
-  "name": "Kevin",
-  "age": "25",
-  "position": "Infield",
-  "team": "Expos",
-  "jerseyNumber":  "10"
-  }, {
-  "name": "Mike",
-  "age": "26",
-  "position": "0utfield",
-  "team": "Brewers",
-  "jerseyNumber":  "3"
-  }, {
-  "name": "Kam",
-  "age": "28",
-  "position": "Pitcher",
-  "team": "Expos",
-  "jerseyNumber":  "12"
-  }, {
-  "name": "Tyler",
-  "age": "30",
-  "position": "Catcher",
-  "team": "Braves",
-  "jerseyNumber":  "16"
-  }, {
-  "name": "Brian",
-  "age": "30",
-  "position": "Pitcher",
-  "team": "Expos",
-  "jerseyNumber":  "5"
-  }
+    "name": "Kevin",
+    "age": "25",
+    "position": "Infield",
+    "team": "Expos",
+    "jerseyNumber":  "10"
+    }, {
+    "name": "Mike",
+    "age": "26",
+    "position": "0utfield",
+    "team": "Brewers",
+    "jerseyNumber":  "3"
+    }, {
+    "name": "Kam",
+    "age": "28",
+    "position": "Pitcher",
+    "team": "Expos",
+    "jerseyNumber":  "12"
+    }, {
+    "name": "Tyler",
+    "age": "30",
+    "position": "Catcher",
+    "team": "Braves",
+    "jerseyNumber":  "16"
+    }, {
+    "name": "Brian",
+    "age": "30",
+    "position": "Pitcher",
+    "team": "Expos",
+    "jerseyNumber":  "5"
+    }
   ],
   "games": [{
-  "team1": "Expos",
-  "team2": "Braves",
-  "date": "Today",
-  "field": "Here"
-  }, {
-  "team1": "Expos",
-  "team2": "Brewers",
-  "date": "Tomorrow",
-  "field": "There"
-  }]
+    "team1": "Expos",
+    "team1Score": "4",
+    "team2": "Braves",
+    "team2Score": "0",
+    "date": "Today",
+    "field": "Here"
+    }, {
+    "team1": "Expos",
+    "team1Score": "10",
+    "team2": "Brewers",
+    "team2Score": "4",
+    "date": "Tomorrow",
+    "field": "There"
+    }
+  ],
+  "teams": [{
+    "name": "Expos",
+    "manager": "Kevin",
+    "wins": "0",
+    "losses": "0",
+    "players": [],
+    "games": []
+    }, {
+    "name": "Tigers",
+    "manager": "Byron",
+    "wins": "0",
+    "losses": "0",
+    "players": [],
+    "games": []
+    }
+  ]
 }
