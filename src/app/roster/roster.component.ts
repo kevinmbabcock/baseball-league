@@ -24,4 +24,10 @@ export class RosterComponent implements OnInit {
     this.router.navigate(['players', clickedPlayer.$key]);
   }
 
+  goToEditPage(clickedPlayer) {
+    // this.router.navigate(['admin/(content:edit-player', clickedPlayer.$key])
+    let path = clickedPlayer.$key;
+    this.router.navigate(['admin/(content:edit-player)', clickedPlayer.$key]);
+  }
+
 }

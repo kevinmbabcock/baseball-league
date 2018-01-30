@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Baseball League';
+  title = 'Seattle Baseball League';
 
   constructor() {}
 
