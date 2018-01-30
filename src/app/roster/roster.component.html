@@ -6,9 +6,9 @@
         <ul>
           <li><strong (click)="goToDetailPage(player)">{{player.name}}</strong>, <em>{{player.team}}</em>
           <div *ngIf="currentRoute === '/admin/(content:edit-player)'">
-            <button routerLink='/admin/(content:edit-player/{{player.$key}})'>Edit/Delete</button>
+            <!-- <p>{{player.$key}}</p> -->
+            <button [routerLink]="admin/[{outlets: { content:['edit-player'] } }]">Edit/Delete</button>
           </div>
-          </li>
         </ul>
       </div>
     </div>
