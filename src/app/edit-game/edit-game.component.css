@@ -1,13 +1,15 @@
-.schedule {
-  padding: 10px;
-}
-
 .col-md-2, .col-md-3 {
   text-align: center;
   border-style: solid;
-  border-width: 2px 1px 2px 2px;
+  border-width: 0px 0px 1px 1px;
+  border-color: rgba(0,0,0,0.3);
 }
 
 .title {
-  background-color: #cccccc;
+  font-weight: bold;
+  background-color: #ffcc99 !important;
+}
+
+input {
+  width: inherit;
 }

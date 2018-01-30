@@ -1,8 +1,9 @@
-<h3>Player: <strong>{{(playerToDisplay | async)?.name}}</strong></h3>
-
-<ul>
-  <li>Age: <strong>{{(playerToDisplay | async)?.age}}</strong></li>
-  <li>Position: <strong>{{(playerToDisplay | async)?.position}}</strong></li>
-  <li>Team: <strong>{{(playerToDisplay | async)?.team}}</strong></li>
-  <li>Jersey Number: <strong>{{(playerToDisplay | async)?.jerseyNumber}}</strong></li>
-</ul>
+<div class="player-details">
+  <h3>Player: <strong>{{(playerToDisplay | async)?.name}}</strong></h3>
+  <ul>
+    <li>Age: <strong>{{(playerToDisplay | async)?.age}}</strong></li>
+    <li>Position: <strong>{{(playerToDisplay | async)?.position}}</strong></li>
+    <li>Team: <strong>{{(playerToDisplay | async)?.team}}</strong></li>
+    <li>Jersey Number: <strong>{{(playerToDisplay | async)?.jerseyNumber}}</strong></li>
+  </ul>
+</div>

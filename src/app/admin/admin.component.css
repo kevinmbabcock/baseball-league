@@ -1,9 +1,14 @@
 .col-md-2 {
-  background-color: #c299ff;
+  background-color: #a52a2a;
   padding: 3px;
   font-size: 18px;
 }
 
 a {
   color: white;
+}
+
+.col-md-10 {
+  background-color: white;
+  padding: 15px;
 }

@@ -1,0 +1,6 @@
+.player-details {
+  background-color: white;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  padding: 15px;
+}

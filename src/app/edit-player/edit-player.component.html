@@ -1,26 +1,29 @@
-<h4>Edit Player: {{(playerToDisplay | async)?.name}}</h4>
+<div class="edit-player">
+  <h4>Edit Player: {{(playerToDisplay | async)?.name}}</h4>
 
-<label>New Name:</label>
-<input [(ngModel)]="playerToDisplay.name">
-<br>
+  <label>New Name:</label>
+  <input [(ngModel)]="playerToDisplay.name">
+  <br>
 
-<label>New Age:</label>
-<input [(ngModel)]="playerToDisplay.age">
-<br>
+  <label>New Age:</label>
+  <input [(ngModel)]="playerToDisplay.age">
+  <br>
 
-<label>New Position:</label>
-<input [(ngModel)]="playerToDisplay.position">
-<br>
+  <label>New Position:</label>
+  <input [(ngModel)]="playerToDisplay.position">
+  <br>
 
-<label>New Team:</label>
-<input [(ngModel)]="playerToDisplay.team">
-<br>
+  <label>New Team:</label>
+  <input [(ngModel)]="playerToDisplay.team">
+  <br>
 
-<label>New Jersey Number:</label>
-<input [(ngModel)]="playerToDisplay.jerseyNumber">
-<br>
+  <label>New Jersey Number:</label>
+  <input [(ngModel)]="playerToDisplay.jerseyNumber">
+  <br>
 
-<button (click)="beginUpdatingPlayer(playerToDisplay)" routerLink='../../../admin/edit-player'>Update</button>
-<br>
-<br>
-<button (click) ="beginDeletingPlayer(playerToDisplay)" class="btn-danger" routerLink='../../../admin/edit-player'>Delete Player</button>
+  <button (click)="beginUpdatingPlayer(playerToDisplay)" routerLink='../../../admin/edit-player'>Update</button>
+  <br>
+  <br>
+  <button (click) ="beginDeletingPlayer(playerToDisplay)" class="btn-danger" routerLink='../../../admin/edit-player'>Delete Player</button>
+
+</div>

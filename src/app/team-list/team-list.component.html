@@ -1,9 +1,11 @@
-<h3>Here is a list of all teams in our league</h3>
-  <br>
-  <div *ngFor="let team of teams" class="panel panel-default">
-    <div class="panel-body">
-      <ul>
-        <li (click)="goToDetailPage(team)"><strong>{{team.name}}</strong></li>
-      </ul>
+<div class="transparent">
+  <h3>Here is a list of all teams in our league</h3>
+    <br>
+    <div *ngFor="let team of teams" class="panel panel-default">
+      <div class="panel-body">
+        <ul>
+          <li (click)="goToDetailPage(team)"><strong>{{team.name}}</strong></li>
+        </ul>
+      </div>
     </div>
-  </div>
+</div>
