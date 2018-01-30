@@ -1,14 +1,10 @@
-.col-md-2 {
+.admin {
   background-color: #a52a2a;
-  padding: 3px;
+  padding: 10px;
   font-size: 18px;
+  width: 200px;
 }
 
 a {
   color: white;
-}
-
-.col-md-10 {
-  background-color: white;
-  padding: 15px;
 }

@@ -8,11 +8,9 @@
   <label>New Team Manager:</label>
   <input [(ngModel)]="teamToDisplay.manager">
   <br>
-
-  <button (click)="beginUpdatingTeam(teamToDisplay)" class="btn-success" routerLink='../..'>Update</button>
-  <br>
   <br>
 
-  <button (click)="beginDeletingTeam(teamToDisplay)" class="btn-danger" routerLink='../..'>Delete Team</button>
+  <button (click)="beginUpdatingTeam(teamToDisplay)" routerLink='../..'>Update</button>
+  <button (click)="beginDeletingTeam(teamToDisplay)" class="btn-danger" routerLink='../..'>Delete</button>
 
 </div>

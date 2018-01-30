@@ -39,10 +39,12 @@
         <br>
         <input #newField>
       </div>
+      <br>
 
-      <button (click)="submitForm(newTeam1.value, newTeam1Score.value, newTeam2.value, newTeam2Score.value, newDate.value, newField.value); newTeam1.value=''; newTeam1Score.value=''; newTeam2.value=''; newTeam2Score.value=''; newDate.value=''; newField.value='' ">Add</button>
+      <button (click)="submitForm(newTeam1.value, newTeam1Score.value, newTeam2.value, newTeam2Score.value, newDate.value, newField.value); newTeam1.value=''; newTeam1Score.value=''; newTeam2.value=''; newTeam2Score.value=''; newDate.value=''; newField.value='' " class="btn-success">Add</button>
     </div>
   </div>
 </div>
+<br>
 <br>
 <app-schedule><app-schedule>
