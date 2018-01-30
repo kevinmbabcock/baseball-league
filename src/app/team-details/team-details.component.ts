@@ -15,6 +15,7 @@ export class TeamDetailsComponent implements OnInit {
   teamId: string;
   teamToDisplay;
 
+
   constructor(private route: ActivatedRoute, private location: Location, private teamService: TeamService) { }
 
   ngOnInit() {
@@ -22,7 +23,6 @@ export class TeamDetailsComponent implements OnInit {
       this.teamId = urlParameters['id'];
     });
     this.teamToDisplay = this.teamService.getTeamById(this.teamId);
-    console.log(this.teamToDisplay);
   }
 
 }
