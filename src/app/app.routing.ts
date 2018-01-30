@@ -42,36 +42,44 @@ const appRoutes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminComponent
-  },
-  {
-    path: 'admin/add-player',
-    component: AddPlayerComponent
-  },
-  {
-    path: 'admin/edit-player',
-    component: RosterComponent
-  },
-  {
-    path: 'admin/edit-player/:id',
-    component: EditPlayerComponent
-  },
-  {
-    path: 'admin/add-team',
-    component: AddTeamComponent
-  },
-  {
-    path: 'admin/edit-team',
-    component: EditTeamComponent
-  },
-  {
-    path: 'admin/add-game',
-    component: AddGameComponent
-  },
-  {
-    path: 'admin/edit-game',
-    component: EditGameComponent
-  }
+    component: AdminComponent,
+    children: [
+    {
+      path: 'add-player',
+      component: AddPlayerComponent,
+      outlet: 'content'
+    },
+    {
+      path: 'edit-player',
+      component: RosterComponent,
+      outlet: 'content'
+    },
+    {
+      path: 'edit-player/:id',
+      component: EditPlayerComponent,
+      outlet: 'content'
+    },
+    {
+      path: 'add-team',
+      component: AddTeamComponent,
+      outlet: 'content'
+    },
+    {
+      path: 'edit-team',
+      component: EditTeamComponent,
+      outlet: 'content'
+    },
+    {
+      path: 'add-game',
+      component: AddGameComponent,
+      outlet: 'content'
+    },
+    {
+      path: 'edit-game',
+      component: EditGameComponent,
+      outlet: 'content'
+    }
+  ]}
 ];
 
 

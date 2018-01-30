@@ -1,1 +1,22 @@
-<h1>admin here</h1>
+<div class="row">
+  <div class="col-md-2">
+    <br>
+    <ul><strong>Players:</strong>
+      <li><a [routerLink]="[{ outlets: { content: ['add-player'] } }]">Add player</a></li>
+      <li><a [routerLink]="[{ outlets: { content: ['edit-player'] } }]">Edit player</a></li>
+    </ul>
+    <hr>
+    <ul><strong>Teams:</strong>
+      <li><a [routerLink]="[{ outlets: { content: ['add-team'] } }]">Add team</a></li>
+      <li><a [routerLink]="[{ outlets: { content: ['edit-team'] } }]">Edit team</a></li>
+    </ul>
+    <hr>
+    <ul><strong>Games:</strong>
+      <li><a [routerLink]="[{ outlets: { content: ['add-game'] } }]">Add game</a></li>
+      <li><a [routerLink]="[{ outlets: { content: ['edit-game'] } }]">Edit game</a></li>
+    </ul>
+  </div>
+  <div class="col-md-10">
+    <router-outlet name='content'></router-outlet>
+  </div>
+</div>

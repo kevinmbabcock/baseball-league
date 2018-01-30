@@ -9,9 +9,6 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Baseball League';
 
-  currentRoute: string = this.router.url;
-  
-
-  constructor(private router: Router) {}
+  constructor() {}
 
 }

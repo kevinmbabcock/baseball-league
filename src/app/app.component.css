@@ -9,3 +9,7 @@
 .navbar-default a {
   color: white;
 }
+
+.main-outlet {
+  padding: 12px;
+}
