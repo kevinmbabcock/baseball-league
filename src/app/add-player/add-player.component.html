@@ -17,23 +17,37 @@
       </div>
 
       <div>
+        <label>Position:</label>
+        <select #newPosition>
+          <option *ngFor="let position of positions">{{position}}</option>
+        </select>
+      </div>
+
+      <!-- <div>
         <label>Position</label>
         <br>
         <textarea #newPosition></textarea>
-      </div>
+      </div> -->
 
       <div>
+        <label>Team:</label>
+        <select #newTeam>
+          <option *ngFor="let team of teams | async">{{team.name}}</option>
+        </select>
+      </div>
+
+      <!-- <div>
         <label>Team</label>
         <br>
         <textarea #newTeam></textarea>
-      </div>
+      </div> -->
 
       <div>
         <label>Jersey Number</label>
         <br>
-        <textarea #newJerseyNumber></textarea>
+        <input #newJerseyNumber>
       </div>
-
+      <br>
       <button (click)="submitForm(newName.value, newAge.value, newPosition.value, newTeam.value, newJerseyNumber.value); newName.value=''; newAge.value=''; newPosition.value=''; newTeam.value=''; newJerseyNumber.value=''" routerLink='../' class="btn-success">Add</button>
     </div>
   </div>
