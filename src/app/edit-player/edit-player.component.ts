@@ -3,18 +3,23 @@ import { Player } from '../player.model';
 import { PlayerService } from '../player.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
+import { Team } from '../team.model';
+import { TeamService } from '../team.service';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-edit-player',
   templateUrl: './edit-player.component.html',
   styleUrls: ['./edit-player.component.css'],
-  providers: [PlayerService]
+  providers: [PlayerService, TeamService]
 })
 export class EditPlayerComponent implements OnInit {
   playerToDisplay = Player;
   playerId: string;
+  positions: string[] = ["P", "C", "1B", "2B", "3B", "SS", "RF", "CF", "LF", "RF", "INF", "OF", "UTIL"];
+  teams: FirebaseListObservable<any[]>;
 
-  constructor(private route: ActivatedRoute, private location: Location, private playerService: PlayerService) { }
+  constructor(private route: ActivatedRoute, private location: Location, private playerService: PlayerService, private teamService: TeamService) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
@@ -23,10 +28,11 @@ export class EditPlayerComponent implements OnInit {
     this.playerService.getPlayerById(this.playerId).subscribe(dataLastEmittedFromObserver => {
       this.playerToDisplay = dataLastEmittedFromObserver;
     });
+    this.teams = this.teamService.getTeams();
   }
 
-  beginUpdatingPlayer(playerToUpdate) {
-    this.playerService.updatePlayer(playerToUpdate);
+  beginUpdatingPlayer(playerToUpdate, position, team) {
+    this.playerService.updatePlayer(playerToUpdate, position, team);
   }
 
   beginDeletingPlayer(playerToDelete) {

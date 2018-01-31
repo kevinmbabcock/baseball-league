@@ -19,8 +19,6 @@ export class AddPlayerComponent implements OnInit {
 
   ngOnInit() {
     this.teams = this.teamService.getTeams();
-    console.log(this.positions);
-    console.log(this.teams);
   }
 
   submitForm(name: string, age: string, position: string, team: string, jerseyNumber: string) {

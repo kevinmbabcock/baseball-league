@@ -9,19 +9,33 @@
   <input [(ngModel)]="playerToDisplay.age">
   <br>
 
-  <label>New Position:</label>
+  <!-- <label>New Position:</label>
   <input [(ngModel)]="playerToDisplay.position">
+  <br> -->
+
+  <label>Position:</label>
+  <select #newPosition>
+    <option selected>{{playerToDisplay.position}}</option>
+    <option *ngFor="let position of positions">{{position}}</option>
+  </select>
   <br>
 
-  <label>New Team:</label>
-  <input [(ngModel)]="playerToDisplay.team">
+  <label>Team:</label>
+  <select #newTeam>
+    <option selected>{{playerToDisplay.team}}</option>
+    <option *ngFor="let team of teams | async">{{team.name}}</option>
+  </select>
   <br>
+
+  <!-- <label>New Team:</label>
+  <input [(ngModel)]="playerToDisplay.team">
+  <br> -->
 
   <label>New Jersey Number:</label>
   <input [(ngModel)]="playerToDisplay.jerseyNumber">
   <br>
   <br>
-  <button (click)="beginUpdatingPlayer(playerToDisplay)" routerLink='../..'>Update</button>
+  <button (click)="beginUpdatingPlayer(playerToDisplay, newPosition.value, newTeam.value)" routerLink='../..'>Update</button>
   <button (click) ="beginDeletingPlayer(playerToDisplay)" class="btn-danger" routerLink='../..'>Delete</button>
 
 </div>
