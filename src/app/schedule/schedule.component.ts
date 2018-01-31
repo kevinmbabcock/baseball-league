@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 
@@ -9,12 +9,14 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers: [GameService]
 })
 export class ScheduleComponent implements OnInit {
+  @Input('teamName') filterByTeamName: string;
   games: FirebaseListObservable<any[]>;
 
   constructor(private gameService: GameService) { }
 
   ngOnInit() {
     this.games = this.gameService.getGames();
+    console.log(this.filterByTeamName);
   }
 
 }
