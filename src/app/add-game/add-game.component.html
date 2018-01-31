@@ -4,10 +4,13 @@
   </div>
   <div class="panel-body">
     <div>
+
       <div>
         <label>Home Team:</label>
         <br>
-        <input #newTeam1>
+        <select #newTeam1>
+          <option *ngFor="let team of teams | async">  {{team.name}}  </option>
+        </select>
       </div>
 
       <div>
@@ -19,7 +22,9 @@
       <div>
         <label>Away Team:</label>
         <br>
-        <input #newTeam2>
+        <select #newTeam2>
+          <option *ngFor="let team of teams | async">  {{team.name}}  </option>
+        </select>
       </div>
 
       <div>
