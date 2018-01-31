@@ -26,13 +26,21 @@
   </div>
   <div class="row" *ngFor="let game of games | async ">
     <div class="col-md-2">
-      <input [(ngModel)]="game.team1">
+      <!-- <input [(ngModel)]="game.team1"> -->
+      <select #newTeam1>
+        <option selected>{{game.team1}}</option>
+        <option *ngFor="let game of games | async">{{game.name}}</option>
+      </select>
     </div>
     <div class="col-md-1">
       <input [(ngModel)]="game.team1Score">
     </div>
     <div class="col-md-2">
-      <input [(ngModel)]="game.team2">
+      <!-- <input [(ngModel)]="game.team2"> -->
+      <select #newTeam2>
+        <option selected>{{game.team2}}</option>
+        <option *ngFor="let team of teams | async">{{team.name}}</option>
+      </select>
     </div>
     <div class="col-md-1">
       <input [(ngModel)]="game.team2Score">
@@ -44,7 +52,7 @@
       <input [(ngModel)]="game.field">
     </div>
     <div class="col-md-2">
-      <button (click)="beginUpdatingGame(game)">Update</button>
+      <button (click)="beginUpdatingGame(game, newTeam1.value, newTeam2.value)">Update</button>
       <button (click) ="beginDeletingGame(game)" class="btn-danger">Delete</button>
     </div>
   </div>
