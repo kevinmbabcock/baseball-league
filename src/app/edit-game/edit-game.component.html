@@ -29,7 +29,7 @@
       <!-- <input [(ngModel)]="game.team1"> -->
       <select #newTeam1>
         <option selected>{{game.team1}}</option>
-        <option *ngFor="let game of games | async">{{game.name}}</option>
+        <option *ngFor="let team of teams | async">{{team.name}}</option>
       </select>
     </div>
     <div class="col-md-1">
