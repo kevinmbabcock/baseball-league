@@ -4,7 +4,7 @@
   <br>
   <h3>Manager: {{(teamToDisplay | async)?.manager}}</h3>
   <br>
-  <app-roster></app-roster>
+  <app-roster [teamName]="teamName">></app-roster>
   <br>
   <br>
 

@@ -14,6 +14,7 @@ import { TeamService } from '../team.service';
 export class TeamDetailsComponent implements OnInit {
   teamId: string;
   teamToDisplay;
+  teamName: string = "Expos"
 
 
   constructor(private route: ActivatedRoute, private location: Location, private teamService: TeamService) { }

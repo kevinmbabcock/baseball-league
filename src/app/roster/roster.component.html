@@ -1,7 +1,7 @@
 <div class="transparent">
   <h3>Players:</h3>
   <br>
-  <div *ngIf="currentRoute !== '/teams/1'">
+  <div *ngIf="(currentRoute === '/players') || (currentRoute === '/admin/edit-player')">
     <div *ngFor="let player of players | async" class="panel panel-default">
       <div class="panel-body">
         <ul>
@@ -15,8 +15,7 @@
   </div>
 
 
-  <div *ngIf="currentRoute === '/teams/1'">
-    <h1>test</h1>
+  <div *ngIf="(currentRoute !== '/players') && (currentRoute !== '/admin/edit-player')">
     <div *ngFor="let player of players | async | teamMembers:filterByTeamName" class="panel panel-default">
       <div class="panel-body">
         <ul>

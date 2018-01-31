@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlayerService } from '../player.service';
 import { FirebaseListObservable } from 'angularfire2/database';
@@ -11,10 +11,10 @@ import { Player } from '../player.model';
   providers: [PlayerService]
 })
 export class RosterComponent implements OnInit {
+  @Input('teamName') filterByTeamName: string;
   players: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
-  filterByTeamName: string = "Titans";
-
+  
 
   constructor(private router: Router, private playerService: PlayerService) { }
 
@@ -22,6 +22,7 @@ export class RosterComponent implements OnInit {
 
   ngOnInit() {
     this.players = this.playerService.getPlayers();
+    console.log(this.childTeamName);
   }
 
   goToDetailPage(clickedPlayer) {
