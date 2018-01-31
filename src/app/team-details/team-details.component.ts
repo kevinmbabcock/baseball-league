@@ -13,8 +13,9 @@ import { TeamService } from '../team.service';
 })
 export class TeamDetailsComponent implements OnInit {
   teamId: string;
-  teamToDisplay;
-  teamName: string = "Expos"
+  teamToDisplay: FirebaseObjectObservable<Team>;
+  teamName: string;
+  // teamName: string = teamToDisplay.name;
 
 
   constructor(private route: ActivatedRoute, private location: Location, private teamService: TeamService) { }
@@ -23,7 +24,12 @@ export class TeamDetailsComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.teamId = urlParameters['id'];
     });
+    //this part is needed by pipe
     this.teamToDisplay = this.teamService.getTeamById(this.teamId);
+    //this part is needed by Input
+    this.teamService.getTeamById(this.teamId).subscribe(dataLastEmittedFromObserver => {
+      this.teamName = dataLastEmittedFromObserver.name;
+    });
   }
 
 }

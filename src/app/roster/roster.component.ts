@@ -14,7 +14,7 @@ export class RosterComponent implements OnInit {
   @Input('teamName') filterByTeamName: string;
   players: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
-  
+
 
   constructor(private router: Router, private playerService: PlayerService) { }
 
@@ -22,7 +22,6 @@ export class RosterComponent implements OnInit {
 
   ngOnInit() {
     this.players = this.playerService.getPlayers();
-    console.log(this.childTeamName);
   }
 
   goToDetailPage(clickedPlayer) {
