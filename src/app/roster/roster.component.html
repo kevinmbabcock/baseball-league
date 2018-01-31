@@ -1,31 +1,14 @@
 <div class="transparent">
   <h3>Players:</h3>
   <br>
-  <div *ngIf="(currentRoute === '/players') || (currentRoute === '/admin/edit-player')">
-    <div *ngFor="let player of players | async" class="panel panel-default">
-      <div class="panel-body">
-        <ul>
-          <li><strong (click)="goToDetailPage(player)">{{player.name}}</strong>, <em>{{player.team}}</em>
-          <div *ngIf="currentRoute === '/admin/edit-player'">
-            <button routerLink="/admin/edit-player/{{player.$key}}"> Edit/Delete</button>
-          </div>
-        </ul>
-      </div>
+  <div *ngFor="let player of players | async | teamMembers:filterByTeamName" class="panel panel-default">
+    <div class="panel-body">
+      <ul>
+        <li><strong (click)="goToDetailPage(player)">{{player.name}}</strong>, <em>{{player.team}}</em>
+        <div *ngIf="currentRoute === '/admin/edit-player'">
+          <button routerLink="/admin/edit-player/{{player.$key}}"> Edit/Delete</button>
+        </div>
+      </ul>
     </div>
   </div>
-
-
-  <div *ngIf="(currentRoute !== '/players') && (currentRoute !== '/admin/edit-player')">
-    <div *ngFor="let player of players | async | teamMembers:filterByTeamName" class="panel panel-default">
-      <div class="panel-body">
-        <ul>
-          <li><strong (click)="goToDetailPage(player)">{{player.name}}</strong>, <em>{{player.team}}</em>
-          <div *ngIf="currentRoute === '/admin/edit-player'">
-            <button routerLink="/admin/edit-player/{{player.$key}}"> Edit/Delete</button>
-          </div>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  </div>
+</div>

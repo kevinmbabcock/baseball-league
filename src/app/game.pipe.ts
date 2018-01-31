@@ -40,14 +40,14 @@ export class GamePipe implements PipeTransform {
        return output;
      } else if (desiredGameTeam === "Brewers") {
         for (let i=0; i < input.length; i++) {
-          if ((input[i].team === "Brewers") || (input[i].team === "Brewers")) {
+          if ((input[i].team1 === "Brewers") || (input[i].team2 === "Brewers")) {
             output.push(input[i]);
           }
         }
         return output;
       } else if (desiredGameTeam === "Braves") {
          for (let i=0; i < input.length; i++) {
-           if ((input[i].team === "Braves") || (input[i].team === "Braves")) {
+           if ((input[i].team1 === "Braves") || (input[i].team2 === "Braves")) {
              output.push(input[i]);
            }
          }

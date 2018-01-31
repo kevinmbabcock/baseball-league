@@ -16,7 +16,6 @@ export class ScheduleComponent implements OnInit {
 
   ngOnInit() {
     this.games = this.gameService.getGames();
-    console.log(this.filterByTeamName);
   }
 
 }
