@@ -1,5 +1,5 @@
 <div class="schedule">
-  <p class="filter">Filter by team:</p>
+  <p class="filter">Filter:</p>
   <select (change)="onChange($event.target.value)">
     <option selected>All Games</option>
     <option *ngFor="let team of teams | async">{{team.name}}</option>
