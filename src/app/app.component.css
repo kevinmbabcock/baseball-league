@@ -16,3 +16,15 @@
 .main-outlet {
   padding: 12px;
 }
+
+footer {
+  text-align: center;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer a:hover {
+  color: green;
+}

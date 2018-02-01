@@ -1,8 +1,8 @@
 <div class="schedule">
   <div class="filter" *ngIf="currentRoute === '/schedule'">
-    <h3>Filter Teams:</h3>
+    <h5>Filter Teams:</h5>
     <select (change)="onChange($event.target.value)">
-      <option selected>All Games</option>
+      <option selected>All Teams</option>
       <option *ngFor="let team of teams | async">{{team.name}}</option>
     </select>
   </div>

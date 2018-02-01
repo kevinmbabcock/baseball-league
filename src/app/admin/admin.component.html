@@ -21,10 +21,10 @@
       <ul>
         <li *ngIf="isLoggedIn">
           <a>{{userName}}</a>
-          <button (click)="logout()" routerLink="">Log out</button>
+          <button class="btn-success" (click)="logout()" routerLink="">Log out</button>
         </li>
         <li *ngIf ="!isLoggedIn">
-          <button><a (click)="login()">Log in</a></button>
+          <button class="btn-success"><a (click)="login()">Log in</a></button>
         </li>
       </ul>
     </div>
