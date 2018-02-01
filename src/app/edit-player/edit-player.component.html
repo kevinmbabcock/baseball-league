@@ -1,4 +1,4 @@
-<div class="edit-player">
+<div *ngIf="isLoggedIn" class="edit-player">
   <h4>Edit Player: {{playerToDisplay.name}}</h4>
 
   <label>New Name:</label>

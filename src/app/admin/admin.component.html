@@ -1,16 +1,32 @@
 <div class="admin">
-  <ul><strong>Players:</strong>
-    <li><a routerLink="/admin/add-player">Add player</a></li>
-    <li><a routerLink="/admin/edit-player">Edit player</a></li>
-  </ul>
-  <hr>
-  <ul><strong>Teams:</strong>
-    <li><a routerLink="/admin/add-team">Add team</a></li>
-    <li><a routerLink="/admin/edit-team">Edit team</a></li>
-  </ul>
-  <hr>
-  <ul><strong>Games:</strong>
-    <li><a routerLink="/admin/add-game">Add game</a></li>
-    <li><a routerLink="/admin/edit-game">Edit game</a></li>
-  </ul>
+  <div class="row">
+    <div class="col-md-3">
+      <ul><strong>Players:</strong>
+        <li><a routerLink="/admin/add-player">Add player</a></li>
+        <li><a routerLink="/admin/edit-player">Edit player</a></li>
+      </ul>
+      <hr>
+      <ul><strong>Teams:</strong>
+        <li><a routerLink="/admin/add-team">Add team</a></li>
+        <li><a routerLink="/admin/edit-team">Edit team</a></li>
+      </ul>
+      <hr>
+      <ul><strong>Games:</strong>
+        <li><a routerLink="/admin/add-game">Add game</a></li>
+        <li><a routerLink="/admin/edit-game">Edit game</a></li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <h3>Admin authentication:</h3>
+      <ul>
+        <li *ngIf="isLoggedIn">
+          <a>{{userName}}</a>
+          <button (click)="logout()" routerLink="">Log out</button>
+        </li>
+        <li *ngIf ="!isLoggedIn">
+          <button><a (click)="login()">Log in</a></button>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

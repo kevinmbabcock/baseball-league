@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../team.service';
 import { Team } from '../team.model';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-add-team',
@@ -9,8 +10,20 @@ import { Team } from '../team.model';
   providers: [TeamService]
 })
 export class AddTeamComponent implements OnInit {
+  user;
+  private isLoggedIn: Boolean;
+  private userName: String;
 
-  constructor(private teamService: TeamService) { }
+  constructor(public authService: AuthenticationService, private teamService: TeamService) {
+    this.authService.user.subscribe(user => {
+      if (user === null) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = true;
+        this.userName = user.displayName;
+      }
+    });  
+  }
 
   ngOnInit() {
   }

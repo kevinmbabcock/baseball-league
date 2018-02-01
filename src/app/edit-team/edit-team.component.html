@@ -1,4 +1,4 @@
-<div class="edit-team">
+<div *ngIf="isLoggedIn" class="edit-team">
   <h4>Edit Team: {{teamToDisplay.name}}</h4>
 
   <label>New Team Name:</label>

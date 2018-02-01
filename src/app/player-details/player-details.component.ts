@@ -22,6 +22,5 @@ export class PlayerDetailsComponent implements OnInit {
       this.playerId = urlParameters['id'];
     });
     this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
-    console.log(this.playerToDisplay);
   }
 }

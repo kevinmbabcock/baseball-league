@@ -13,6 +13,7 @@ import { AddTeamComponent } from './add-team/add-team.component';
 import { EditTeamComponent } from './edit-team/edit-team.component';
 import { AddGameComponent } from './add-game/add-game.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
+import { AuthGuard } from './auth-guard.service';
 
 
 const appRoutes: Routes = [

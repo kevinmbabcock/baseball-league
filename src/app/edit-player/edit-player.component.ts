@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { Team } from '../team.model';
 import { TeamService } from '../team.service';
 import { FirebaseListObservable } from 'angularfire2/database';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-edit-player',
@@ -18,8 +19,20 @@ export class EditPlayerComponent implements OnInit {
   playerId: string;
   positions: string[] = ["P", "C", "1B", "2B", "3B", "SS", "RF", "CF", "LF", "RF", "INF", "OF", "UTIL"];
   teams: FirebaseListObservable<any[]>;
+  user;
+  private isLoggedIn: Boolean;
+  private userName: String;
 
-  constructor(private route: ActivatedRoute, private location: Location, private playerService: PlayerService, private teamService: TeamService) { }
+  constructor(public authService: AuthenticationService, private route: ActivatedRoute, private location: Location, private playerService: PlayerService, private teamService: TeamService) {
+    this.authService.user.subscribe(user => {
+      if (user === null) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = true;
+        this.userName = user.displayName;
+      }
+    });
+  }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {

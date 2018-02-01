@@ -4,6 +4,8 @@ import { Player } from '../player.model';
 import { Team } from '../team.model';
 import { TeamService } from '../team.service';
 import { FirebaseListObservable } from 'angularfire2/database';
+import { AuthenticationService } from '../authentication.service';
+
 
 @Component({
   selector: 'app-add-player',
@@ -14,8 +16,20 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class AddPlayerComponent implements OnInit {
   positions: string[] = ["P", "C", "1B", "2B", "3B", "SS", "RF", "CF", "LF", "RF", "INF", "OF", "UTIL"];
   teams: FirebaseListObservable<any[]>;
+  user;
+  private isLoggedIn: Boolean;
+  private userName: String;
 
-  constructor(private playerService: PlayerService, private teamService: TeamService) { }
+  constructor(public authService: AuthenticationService, private playerService: PlayerService, private teamService: TeamService) {
+    this.authService.user.subscribe(user => {
+      if (user === null) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = true;
+        this.userName = user.displayName;
+      }
+    });
+  }
 
   ngOnInit() {
     this.teams = this.teamService.getTeams();

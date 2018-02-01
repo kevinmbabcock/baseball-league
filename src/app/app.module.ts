@@ -4,9 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routing } from './app.routing';
 
-import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth'; //authentication part
+import { AuthGuard } from './auth-guard.service'; //Route Guard
+import { masterFirebaseConfig } from './api-keys';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -24,12 +26,14 @@ import { EditGameComponent } from './edit-game/edit-game.component';
 import { PlayerDetailsComponent } from './player-details/player-details.component';
 import { TeamMembersPipe } from './team-members.pipe';
 import { GamePipe } from './game.pipe';
+import { AuthenticationService } from './authentication.service';  //Making our Service Accessible Everywhere
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
   databaseURL: masterFirebaseConfig.databaseURL,
-  storageBucket: masterFirebaseConfig.storageBucket
+  storageBucket: masterFirebaseConfig.storageBucket,
+  messagingSenderId: masterFirebaseConfig.messagingSenderId
 };
 
 @NgModule({
@@ -57,9 +61,10 @@ export const firebaseConfig = {
     HttpClientModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule, //authentication part
   ],
-  providers: [],
+  providers: [AuthGuard, AuthenticationService], //Route Guard
   bootstrap: [AppComponent]
 })
 export class AppModule { }

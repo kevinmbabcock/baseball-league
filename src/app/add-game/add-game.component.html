@@ -1,55 +1,57 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Add new game to the schedule:</h3>
-  </div>
-  <div class="panel-body">
-    <div>
-
+<div *ngIf="isLoggedIn">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Add new game to the schedule:</h3>
+    </div>
+    <div class="panel-body">
       <div>
-        <label>Home Team:</label>
-        <br>
-        <select #newTeam1>
-          <option *ngFor="let team of teams | async">  {{team.name}}  </option>
-        </select>
-      </div>
 
-      <div>
-        <label>Home Team Score:</label>
-        <br>
-        <input #newTeam1Score>
-      </div>
+        <div>
+          <label>Home Team:</label>
+          <br>
+          <select #newTeam1>
+            <option *ngFor="let team of teams | async">  {{team.name}}  </option>
+          </select>
+        </div>
 
-      <div>
-        <label>Away Team:</label>
-        <br>
-        <select #newTeam2>
-          <option *ngFor="let team of teams | async">  {{team.name}}  </option>
-        </select>
-      </div>
+        <div>
+          <label>Home Team Score:</label>
+          <br>
+          <input #newTeam1Score>
+        </div>
 
-      <div>
-        <label>Away Team Score:</label>
-        <br>
-        <input #newTeam2Score>
-      </div>
+        <div>
+          <label>Away Team:</label>
+          <br>
+          <select #newTeam2>
+            <option *ngFor="let team of teams | async">  {{team.name}}  </option>
+          </select>
+        </div>
 
-      <div>
-        <label>Date:</label>
-        <br>
-        <input #newDate type="date">
-      </div>
+        <div>
+          <label>Away Team Score:</label>
+          <br>
+          <input #newTeam2Score>
+        </div>
 
-      <div>
-        <label>Field:</label>
-        <br>
-        <input #newField>
-      </div>
-      <br>
+        <div>
+          <label>Date:</label>
+          <br>
+          <input #newDate type="date">
+        </div>
 
-      <button (click)="submitForm(newTeam1.value, newTeam1Score.value, newTeam2.value, newTeam2Score.value, newDate.value, newField.value); newTeam1.value=''; newTeam1Score.value=''; newTeam2.value=''; newTeam2Score.value=''; newDate.value=''; newField.value='' " class="btn-success">Add</button>
+        <div>
+          <label>Field:</label>
+          <br>
+          <input #newField>
+        </div>
+        <br>
+
+        <button (click)="submitForm(newTeam1.value, newTeam1Score.value, newTeam2.value, newTeam2Score.value, newDate.value, newField.value); newTeam1.value=''; newTeam1Score.value=''; newTeam2.value=''; newTeam2Score.value=''; newDate.value=''; newField.value='' " class="btn-success">Add</button>
+      </div>
     </div>
   </div>
+  <br>
+  <br>
+  <app-schedule></app-schedule>
 </div>
-<br>
-<br>
-<app-schedule><app-schedule>

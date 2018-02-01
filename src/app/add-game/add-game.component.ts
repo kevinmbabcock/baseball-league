@@ -3,6 +3,7 @@ import { Game } from '../game.model';
 import { GameService } from '../game.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { TeamService } from '../team.service';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-add-game',
@@ -12,7 +13,20 @@ import { TeamService } from '../team.service';
 })
 export class AddGameComponent implements OnInit {
   teams: FirebaseListObservable<any[]>;
-  constructor(private gameService: GameService, private teamService: TeamService) { }
+  user;
+  private isLoggedIn: Boolean;
+  private userName: String;
+
+  constructor(public authService: AuthenticationService, private gameService: GameService, private teamService: TeamService) {
+    this.authService.user.subscribe(user => {
+      if (user === null) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = true;
+        this.userName = user.displayName;
+      }
+    });
+  }
 
   ngOnInit() {
     this.teams = this.teamService.getTeams();

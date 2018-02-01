@@ -3,6 +3,7 @@ import { Team } from '../team.model';
 import { TeamService } from '../team.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-edit-team',
@@ -13,8 +14,20 @@ import { Location } from '@angular/common';
 export class EditTeamComponent implements OnInit {
   teamToDisplay = Team;
   teamId: string;
+  user;
+  private isLoggedIn: Boolean;
+  private userName: String;
 
-  constructor(private route: ActivatedRoute, private location: Location, private teamService: TeamService) { }
+  constructor(public authService: AuthenticationService, private route: ActivatedRoute, private location: Location, private teamService: TeamService) {
+    this.authService.user.subscribe(user => {
+      if (user === null) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = true;
+        this.userName = user.displayName;
+      }
+    });
+  }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
