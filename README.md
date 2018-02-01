@@ -6,10 +6,10 @@
 
 ## Description
 
-This website manages baseball league. All data persisted in a connected database (Firebase).
+This website manages a baseball league in Seattle. All data is stored in Firebase.
 * User can visit a page to see a list of all teams.
 * User can click on each individual team from list to see details (manager, players, games)
-* User can visit a page to see a list of all players.
+* User can visit a page to see a list of all players on a team.
 * User can click on each individual player from list to see details (age, position, team, Jersey number)
 * User can visit a page to see a list of all games.
 * User can filter schedule by desired team.
@@ -23,8 +23,7 @@ This website manages baseball league. All data persisted in a connected database
 * go to root directory of this project
 * run `npm install`
 * run `bower install`
-* change directory to src/app
-* create file `touch api-keys.ts`
+* create file `api-keys.ts` in src/app
 * log in to [Firebase](https://firebase.google.com/), go to console and create new project, select Add Firebase to your web app
 * add your api-keys to api-keys.ts file
   `export var masterFirebaseConfig = {
@@ -34,9 +33,9 @@ This website manages baseball league. All data persisted in a connected database
     storageBucket: "xxxx.appspot.com",
     messagingSenderId: "xxxx"
   };`
-* change rules to value: true
-* run `ng serve` for a dev server
-* navigate to `http://localhost:4200/`;the app will automatically reload if you change any of the source files
+* go t rules tab; change values of `read` and `write` to `true`
+* run `ng serve`
+* navigate to `http://localhost:4200/` in the browser; the app will automatically reload if you change any of the source files
 
 ## Support and contact details
 
