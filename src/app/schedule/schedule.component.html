@@ -1,5 +1,5 @@
 <div class="schedule">
-  <div class="filter">
+  <div class="filter" *ngIf="currentRoute === '/schedule'">
     <h3>Filter Teams:</h3>
     <select (change)="onChange($event.target.value)">
       <option selected>All Games</option>

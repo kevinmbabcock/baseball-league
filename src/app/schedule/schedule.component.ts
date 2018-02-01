@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { TeamService } from '../team.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-schedule',
@@ -14,8 +15,9 @@ export class ScheduleComponent implements OnInit {
   games: FirebaseListObservable<any[]>;
   teams: FirebaseListObservable<any[]>;
   filterByTeam: string = "";
+  currentRoute: string = this.router.url;
 
-  constructor(private gameService: GameService, private teamService: TeamService) { }
+  constructor(private router: Router, private gameService: GameService, private teamService: TeamService) { }
 
   ngOnInit() {
     this.games = this.gameService.getGames();
