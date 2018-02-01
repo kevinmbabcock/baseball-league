@@ -1,4 +1,10 @@
 <div class="schedule">
+  <p class="filter">Filter by team:</p>
+  <select (change)="onChange($event.target.value)">
+    <option selected>All Games</option>
+    <option *ngFor="let team of teams | async">{{team.name}}</option>
+  </select>
+  <br><br>
   <div class="row title">
     <div class="col-md-2">
       <h4>Home</h4>
@@ -19,7 +25,7 @@
       <h4>Field</h4>
     </div>
   </div>
-  <div class="row" *ngFor="let game of games | async | game:filterByTeamName ">
+  <div class="row" *ngFor="let game of games | async | game:filterByTeamName | game:filterByTeam">
     <div class="col-md-2">
       <p>{{game.team1}}</p>
     </div>

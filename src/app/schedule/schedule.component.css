@@ -9,6 +9,11 @@
   font-weight: bold;
   background-color: #ffcc99 !important;
 }
-.row {
+.row, .filter {
   background-color: white;
+}
+
+.filter {
+  background-color: #ffcc99;
+
 }
