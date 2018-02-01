@@ -4,3 +4,8 @@
   filter: alpha(opacity=80);
   padding: 15px;
 }
+
+strong:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
