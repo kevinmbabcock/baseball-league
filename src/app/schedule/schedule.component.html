@@ -28,7 +28,7 @@
       <h4>Field</h4>
     </div>
   </div>
-  <div class="row" *ngFor="let game of games | async | game:filterByTeamName | game:filterByTeam">
+  <div class="row" *ngFor="let game of games | async | game:filterByTeamName| date:fixed">
     <div class="col-md-2">
       <p>{{game.team1}}</p>
     </div>

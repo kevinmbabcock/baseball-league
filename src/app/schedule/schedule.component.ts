@@ -14,8 +14,8 @@ export class ScheduleComponent implements OnInit {
   @Input('teamName') filterByTeamName: string;
   games: FirebaseListObservable<any[]>;
   teams: FirebaseListObservable<any[]>;
-  filterByTeam: string = "";
   currentRoute: string = this.router.url;
+  fixed:string = "working"
 
   constructor(private router: Router, private gameService: GameService, private teamService: TeamService) { }
 
@@ -25,7 +25,7 @@ export class ScheduleComponent implements OnInit {
   }
 
   onChange(optionFromMenu) {
-    this.filterByTeam = optionFromMenu;
+    this.filterByTeamName = optionFromMenu;
   }
 
 }

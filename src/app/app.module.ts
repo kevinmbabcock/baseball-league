@@ -26,7 +26,8 @@ import { EditGameComponent } from './edit-game/edit-game.component';
 import { PlayerDetailsComponent } from './player-details/player-details.component';
 import { TeamMembersPipe } from './team-members.pipe';
 import { GamePipe } from './game.pipe';
-import { AuthenticationService } from './authentication.service';  //Making our Service Accessible Everywhere
+import { AuthenticationService } from './authentication.service';
+import { DatePipe } from './date.pipe';  //Making our Service Accessible Everywhere
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -53,7 +54,8 @@ export const firebaseConfig = {
     EditGameComponent,
     PlayerDetailsComponent,
     TeamMembersPipe,
-    GamePipe
+    GamePipe,
+    DatePipe
   ],
   imports: [
     BrowserModule,
