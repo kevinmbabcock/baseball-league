@@ -19,6 +19,16 @@ export class TeamService {
     return this.teams;
   }
 
+  getTeamNames() {
+    let allTeamNames: string[] = [];
+    this.teams.subscribe(dataLastEmittedFromObserver => {
+      dataLastEmittedFromObserver.forEach(function(team) {
+        allTeamNames.push(team.name);
+      });
+    });
+    return allTeamNames;
+  }
+
   addTeam(newTeam: Team) {
     this.teams.push(newTeam);
   }
